@@ -1,9 +1,14 @@
+# Ignore everything
 *
 
+# Don't ignore directories, so their contents can be included
+!*/
+
+# Don't ignore ,gitignore for obvious reasons
 !.gitignore
 
-!iterm2/
-!kitty/
-!linearmouse/
-!lvim/*
-!yabai/
+!iterm2/**/*
+!kitty/**/*
+!linearmouse/**/*
+!lvim/**/*
+!yabai/**/*
