@@ -1,0 +1,9 @@
+*
+
+!.gitignore
+
+!iterm2/
+!kitty/
+!linearmouse/
+!lvim/*
+!yabai/
