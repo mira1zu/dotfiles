@@ -7,4 +7,11 @@ lvim.builtin.alpha.dashboard.section.header.val = {
     [[╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═╝╚══════╝ ╚═════╝ ]],
 }
 
--- lvim.builtin.alpha.dashboard.section.buttons.entries["3"] = { "p", "  Projects", "<CMD>Telescope project<CR>" }
+table.insert(
+    lvim.builtin.alpha.dashboard.section.buttons.entries,
+    {
+        "v",
+        "󰎛  Vault",
+        [[<CMD>lua require("mira1zu.obsidian").init_obsidian()<cr>]]
+    }
+)

@@ -5,8 +5,10 @@
 
 -- lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.treesitter.highlight.additional_vim_regex_highlighting = true
 
 vim.list_extend(
     lvim.builtin.treesitter.ensure_installed,
-    { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'cmake' }
+    { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'cmake', 'markdown', 'markdown_inline' }
 )
+

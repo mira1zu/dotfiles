@@ -5,7 +5,10 @@ linters.setup({
 
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
-    { name = "prettierd" },
+    {
+        name = "prettierd",
+        args = { "--print-width", "80", "--tab-width", "4", "--prose-wrap", "always" }
+    },
 })
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")

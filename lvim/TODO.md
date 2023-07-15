@@ -33,3 +33,4 @@
 - [ ] Telescope find fine seems to ignore normal mode commands like Paste or Yank
 - [ ] border colors. make white
 - [ ] <leader>F and :w format differently
+- [ ] autosave does not get fired when I change smth with `dd`, for example

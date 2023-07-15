@@ -1,9 +1,9 @@
 local colors = require("ayu.colors")
 
-colors.generate() -- pass `true` to enable mirage
+colors.generate(true) -- pass `true` to enable mirage
 
 require("ayu").setup({
-    mirage = false,
+    mirage = true,
     overrides = {
         -- VertSplit = { bg = "None" },
     },
