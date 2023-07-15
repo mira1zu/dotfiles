@@ -12,6 +12,7 @@
 !linearmouse/**/*
 !lvim/**/*
 !yabai/**/*
+!skhd/**/*
 !lazygit/**/*
 
 state.yml
