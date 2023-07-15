@@ -5,7 +5,8 @@ require("auto-save").setup {
             "InsertLeave",
             "FocusLost",
             "BufWinLeave",
-            -- "UserGettingBored",
+            "CursorHold",
+            "VimLeave"
         },
         defer_save = { "FocusLost" }, -- vim events that trigger a deferred save (saves after `debounce_delay`)
         cancel_defered_save = { "FocusLost" },
