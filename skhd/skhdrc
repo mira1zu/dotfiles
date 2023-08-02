@@ -1,53 +1,75 @@
-# change window focus within space
+# Windows
+
+# Change window focus within space
 cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
 cmd - j : yabai -m window --focus south
 cmd - h : yabai -m window --focus west
 
-# change focus between external displays (left and right)
-ctrl + cmd - s: yabai -m display --focus west
-ctrl + cmd - g: yabai -m display --focus east
+# Swap windows
+shift + cmd - k : yabai -m window --swap north
+shift + cmd - l : yabai -m window --swap east
+shift + cmd - j : yabai -m window --swap south
+shift + cmd - h : yabai -m window --swap west
 
-# rotate layout clockwise
-ctrl + cmd - r : yabai -m space --rotate 270
+# Move window and split
+ctrl + cmd - k : yabai -m window --warp north
+ctrl + cmd - l : yabai -m window --warp east
+ctrl + cmd - j : yabai -m window --warp south
+ctrl + cmd - h : yabai -m window --warp west
 
-# flip along y-axis
-ctrl + cmd - y : yabai -m space --mirror y-axis
-
-# flip along x-axis # Conflicts
-ctrl + cmd - x : yabai -m space --mirror x-axis
-
-# toggle window float
+# Toggle window float
 shift + cmd - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-# balance out tree of windows (resize to occupy same area)
-shift + cmd - e : yabai -m space --balance
+# Resize window to 16:9
+shift + cmd - y : ~/.config/skhd/resize_window2.sh
 
-# swap windows
-shift + cmd - j : yabai -m window --swap south
-shift + cmd - k : yabai -m window --swap north
-shift + cmd - h : yabai -m window --swap west
-shift + cmd - l : yabai -m window --swap east
+# Displays
 
-# move window and split
-ctrl + cmd - j : yabai -m window --warp south
-ctrl + cmd - k : yabai -m window --warp north
-ctrl + cmd - h : yabai -m window --warp west
-ctrl + cmd - l : yabai -m window --warp east
+# Change focus between external displays
+ctrl + cmd - s : yabai -m display --focus west
+ctrl + cmd - g : yabai -m display --focus east
 
-# move window to display left and right
+# Move window to display
 shift + cmd - s : yabai -m window --display west; yabai -m display --focus west;
 shift + cmd - g : yabai -m window --display east; yabai -m display --focus east;
 
-# move window to prev and next space
+# Spaces
+
+# Move window to prev and next space
 shift + cmd - p : yabai -m window --space prev;
 shift + cmd - n : yabai -m window --space next;
 
-# move window to space # breaks screenshot
-# shift + cmd - 1 : yabai -m window --space 1;
-# shift + cmd - 2 : yabai -m window --space 2;
-# shift + cmd - 3 : yabai -m window --space 3;
-# shift + cmd - 4 : yabai -m window --space 4;
-# shift + cmd - 5 : yabai -m window --space 5;
-# shift + cmd - 6 : yabai -m window --space 6;
-# shift + cmd - 7 : yabai -m window --space 7;
+# Move window to space 
+ctrl + cmd - 1 : yabai -m window --space 1;
+ctrl + cmd - 2 : yabai -m window --space 2;
+ctrl + cmd - 3 : yabai -m window --space 3;
+ctrl + cmd - 4 : yabai -m window --space 4;
+ctrl + cmd - 5 : yabai -m window --space 5;
+ctrl + cmd - 6 : yabai -m window --space 6;
+ctrl + cmd - 7 : yabai -m window --space 7;
+ctrl + cmd - 8 : yabai -m window --space 8;
+
+# Move to space. Won't work without SIP partially disabled
+# ctrl + shift - 1 : yabai -m space --focus 1;
+# ctrl + shift - 2 : yabai -m space --focus 2;
+# ctrl + shift - 3 : yabai -m space --focus 3;
+# ctrl + shift - 4 : yabai -m space --focus 4;
+# ctrl + shift - 5 : yabai -m space --focus 5;
+# ctrl + shift - 6 : yabai -m space --focus 6;
+# ctrl + shift - 7 : yabai -m space --focus 7;
+# ctrl + shift - 8 : yabai -m space --focus 8;
+
+# Flip along y-axis
+ctrl + cmd - y : yabai -m space --mirror y-axis
+
+# Flip along x-axis # Conflicts
+ctrl + cmd - x : yabai -m space --mirror x-axis
+
+# Balance out tree of windows (resize to occupy same area)
+shift + cmd - e : yabai -m space --balance
+
+# Terminals
+
+# Open kitty
+ctrl - t : /Applications/kitty.app/Contents/MacOS/kitty -d ~
