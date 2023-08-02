@@ -1,43 +1,42 @@
-local lazygit_toggle = function()
-    local Terminal = require("toggleterm.terminal").Terminal
-    local lazygit = Terminal:new {
-        cmd = 'lazygit',
-        env = { CONFIG_DIR = '/Users/bposhtarenko/.config/lazygit/' },
-        hidden = true,
-        direction = "float",
-        float_opts = {
-            border = "none",
-            width = 100000,
-            height = 100000,
-        },
-        on_open = function(_)
-            vim.cmd "startinsert!"
-        end,
-        on_close = function(_) end,
-        count = 99,
-    }
-    lazygit:toggle()
-end
 local which_key = require("which-key")
 
 lvim.builtin.which_key.on_config_done = function()
     which_key.register({
-        F = {
+        f = {
             function()
                 vim.lsp.buf.format()
             end,
             "Format file"
-        }
-    }, { prefix = "<leader>" })
-
-    which_key.register({
+        },
         g = {
             g = {
                 function()
-                    lazygit_toggle()
+                    require("mira1zu.toggleterm").lazygit_toggle()
                 end,
-                "Format file"
+                "Lazygit"
             }
+        },
+        S = {
+            function()
+                vim.cmd(":SymbolsOutline")
+            end,
+            "Symbols Outline"
+        },
+        v = {
+            c = {
+                ":cd %:p:h<CR>:pwd<CR>",
+                "Set directory as the working"
+            },
+            -- It is preferable to get used to builtin shortcuts
+            -- h = {
+            --     ":split<CR>",
+            --     "Horizontal split"
+            -- },
+            -- v = {
+            --     ":vsplit<CR>",
+            --     "Vertical split"
+            -- },
+            "Vim"
         }
     }, { prefix = "<leader>" })
 end

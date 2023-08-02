@@ -76,6 +76,9 @@ require("obsidian").setup({
     -- is not installed, or if it the command does not support it, the
     -- remaining finders will be attempted in the original order.
     finder = "telescope.nvim",
+    note_id_func = function(title)
+        return title
+    end,
 })
 
 -- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
@@ -91,11 +94,48 @@ end, { noremap = false, expr = true })
 local M = {}
 
 function M.init_obsidian()
+    local which_key = require("which-key")
+
+    -- Setup working directory
     vim.api.nvim_command(":cd /Users/bposhtarenko/Library/CloudStorage/Dropbox/Vault")
     vim.api.nvim_command("Lazy load obsidian.nvim")
     vim.api.nvim_command("Telescope find_files")
 
+    -- Setup autocmd for ObsidianOpen
     vim.cmd([[autocmd BufReadPost *.md lua vim.api.nvim_command("ObsidianOpen")]])
+
+    -- Setup which-key mappings
+    which_key.register({
+        o = {
+            o = {
+                "<cmd>ObsidianOpen<CR>",
+                "Open note in Obsidian"
+            },
+            s = {
+                "<cmd>ObsidianSearch<CR>",
+                "Search"
+            },
+            n = {
+                function()
+                    vim.ui.input({ prompt = "Create file " }, function(file_name)
+                        vim.api.nvim_command("ObsidianNew " .. file_name)
+                    end)
+                end,
+                "Create new note"
+            },
+            q = {
+                "<cmd>ObsidianQuickSwitch<CR>",
+                "Quick switch"
+            },
+            "Obsidian"
+        }
+    }, { prefix = "<leader>" })
+
+    vim.o.linebreak = true
+    vim.o.textwidth = 77 -- Magic value. Why? Because with that setting,
+    -- on my 2560x1080 screen, with three equally split windows, the vim
+    -- window does not move. Also, seems like Obsidian has 77 chars in line
+    -- as well.
 end
 
 return M

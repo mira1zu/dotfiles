@@ -5,3 +5,10 @@
 lvim.builtin.bufferline.options.show_buffer_close_icons = false
 
 lvim.builtin.bufferline.options.indicator.style = 'underline'
+
+require("which-key").register({
+    j = {
+        "<cmd>BufferLinePick<cr>",
+        "Jump to buffer"
+    }
+}, { prefix = "<leader>" })

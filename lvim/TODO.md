@@ -19,7 +19,6 @@
 - [ ] buffer find command opens in normal mode, instead of insert.
 - [ ] @ in nvim-tree opens file in external app. Looks great! Or not?
 - [ ] nvim-cmp menu display timeout.
-- [ ] leap configuration
 - [ ] Add `import all`
 - [ ] improve colorscheme. Selection in vscode looks so much better. Also, errorLens extension for vscode, same thing
 - [ ] toggleterm should have three fullscreen terminals (cmd+3).
@@ -34,3 +33,4 @@
 - [ ] border colors. make white
 - [ ] <leader>F and :w format differently
 - [ ] autosave does not get fired when I change smth with `dd`, for example
+- [ ] bufferline, tweak with jump command. https://github.com/akinsho/bufferline.nvim/issues/652. BufferLinePick

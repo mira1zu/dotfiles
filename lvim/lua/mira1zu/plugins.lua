@@ -73,7 +73,18 @@ lvim.plugins = {
             require('nvim-highlight-colors').setup {}
         end
     },
-    { "github/copilot.vim" },
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+    },
+        event = "InsertEnter",
+    {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    },
     {
         "epwalsh/obsidian.nvim",
         lazy = true,
@@ -86,7 +97,7 @@ lvim.plugins = {
             "nvim-telescope/telescope.nvim",
         },
     },
-    { "L3MON4D3/LuaSnip",  lazy = true, event = "BufEnter" },
+    { "L3MON4D3/LuaSnip", lazy = true, event = "BufEnter" },
     -- {
     --     "nvim-lualine/lualine.nvim",
     --     -- config = function()
