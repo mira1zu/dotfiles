@@ -1,0 +1,12 @@
+gui:
+  border: 'rounded'
+  theme:
+    selectedLineBgColor:
+      - '#33415E'
+    selectedRangeBgColor:
+      - '#33415E'
+git:
+  branchLogCmd: "git lg"
+  parseEmoji: true
+os:
+  editPreset: 'nvim'
