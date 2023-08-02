@@ -8,5 +8,8 @@ gui:
 git:
   branchLogCmd: "git lg"
   parseEmoji: true
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
 os:
   editPreset: 'nvim'
