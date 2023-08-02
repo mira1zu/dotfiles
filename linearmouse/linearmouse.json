@@ -1,53 +1,70 @@
 {
-  "$schema": "https://schema.linearmouse.app/0.9.1",
-  "schemes": [
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1",
+  "schemes" : [
     {
-      "if": {
-        "device": {
-          "productName": "M720 Triathlon",
-          "serialNumber": "F3CD010DF96724D5",
-          "productID": "0xb015",
-          "category": "mouse",
-          "vendorID": "0x46d"
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "M720 Triathlon",
+          "serialNumber" : "F3CD010DF96724D5",
+          "productID" : "0xb015",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
         }
       },
-      "pointer": {
-        "disableAcceleration": true
-      },
-      "scrolling": {
-        "acceleration": {
-          "vertical": 1
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
         },
-        "distance": {
-          "vertical": "auto"
+        "distance" : {
+          "vertical" : "auto"
         },
-        "speed": {
-          "vertical": 0
+        "speed" : {
+          "vertical" : 0
         }
       }
     },
     {
-      "if": {
-        "device": {
-          "productName": "G102 Prodigy Gaming Mouse",
-          "serialNumber": "067238673135",
-          "productID": "0xc084",
-          "category": "mouse",
-          "vendorID": "0x46d"
+      "pointer" : {
+        "acceleration" : 1,
+        "speed" : 0.1,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "G102 Prodigy Gaming Mouse",
+          "serialNumber" : "067238673135",
+          "productID" : "0xc084",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
         }
       },
-      "pointer": {
-        "disableAcceleration": true
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : "auto"
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "acceleration" : 1,
+        "speed" : 0.03,
+        "disableAcceleration" : false
       },
-      "scrolling": {
-        "acceleration": {
-          "vertical": 1
-        },
-        "distance": {
-          "vertical": "auto"
-        },
-        "speed": {
-          "vertical": 0
+      "if" : {
+        "device" : {
+          "productName" : "USB Receiver",
+          "productID" : "0xc52b",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
         }
       }
     }
