@@ -10,5 +10,9 @@ require("which-key").register({
     j = {
         "<cmd>BufferLinePick<cr>",
         "Jump to buffer"
+    },
+    k = {
+        "<cmd>BufferLinePickClose<cr>",
+        "Close buffer"
     }
 }, { prefix = "<leader>" })

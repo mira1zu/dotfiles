@@ -1,3 +1,3 @@
 require("cinnamon").setup {
-  scroll_limit = 50,
+    scroll_limit = 50,
 }

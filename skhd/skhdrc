@@ -19,26 +19,29 @@ ctrl + cmd - j : yabai -m window --warp south
 ctrl + cmd - h : yabai -m window --warp west
 
 # Toggle window float
-shift + cmd - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + cmd - 0x32 : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # Resize window to 16:9
-shift + cmd - y : ~/.config/skhd/resize_window2.sh
+# shift + cmd - y : ~/.config/skhd/resize_window2.sh
 
 # Displays
-
 # Change focus between external displays
-ctrl + cmd - s : yabai -m display --focus west
+ctrl + cmd - d : yabai -m display --focus north 
 ctrl + cmd - g : yabai -m display --focus east
+ctrl + cmd - f : yabai -m display --focus south
+ctrl + cmd - s : yabai -m display --focus west
 
 # Move window to display
-shift + cmd - s : yabai -m window --display west; yabai -m display --focus west;
+# shift + cmd - d : yabai -m window --display north; yabai -m display --focus north;
 shift + cmd - g : yabai -m window --display east; yabai -m display --focus east;
+# shift + cmd - f : yabai -m window --display south; yabai -m display --focus south;
+shift + cmd - s : yabai -m window --display west; yabai -m display --focus west;
 
 # Spaces
 
 # Move window to prev and next space
-shift + cmd - p : yabai -m window --space prev;
-shift + cmd - n : yabai -m window --space next;
+# shift + cmd - p : yabai -m window --space prev;
+# shift + cmd - n : yabai -m window --space next;
 
 # Move window to space 
 ctrl + cmd - 1 : yabai -m window --space 1;
@@ -49,6 +52,7 @@ ctrl + cmd - 5 : yabai -m window --space 5;
 ctrl + cmd - 6 : yabai -m window --space 6;
 ctrl + cmd - 7 : yabai -m window --space 7;
 ctrl + cmd - 8 : yabai -m window --space 8;
+ctrl + cmd - 9 : yabai -m window --space 9;
 
 # Move to space. Won't work without SIP partially disabled
 # ctrl + shift - 1 : yabai -m space --focus 1;
@@ -67,7 +71,7 @@ ctrl + cmd - y : yabai -m space --mirror y-axis
 ctrl + cmd - x : yabai -m space --mirror x-axis
 
 # Balance out tree of windows (resize to occupy same area)
-shift + cmd - e : yabai -m space --balance
+shift + cmd - 0x18 : yabai -m space --balance
 
 # Terminals
 

@@ -31,10 +31,10 @@ yabai -m config layout                     bsp          \
                 mouse_drop_action          swap         \
                 mouse_modifier             cmd          \
                                                         \
-                top_padding                8           \
-                bottom_padding             8           \
-                left_padding               8           \
-                right_padding              8           \
+                top_padding                8            \
+                bottom_padding             8            \
+                left_padding               8            \
+                right_padding              8            \
                 window_gap                 8
 
 # disable specific apps
@@ -43,3 +43,10 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^LinearMouse$" manage=off
+yabai -m rule --add app="^Digital Color Meter$" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" manage=off
+
+yabai -m rule --add app="^Telegram$" border=off
+
+# yabai -m signal --add event=window_created app="^Terminal$|^Finder$|^IntelliJ IDEA$" \
+#     action="yabai -m space --layout float && yabai -m space --layout bsp"

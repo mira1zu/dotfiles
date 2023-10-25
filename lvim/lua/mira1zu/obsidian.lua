@@ -1,5 +1,7 @@
+local obsidian_dir = "/Users/bposhtarenko/Vault"
+
 require("obsidian").setup({
-    dir = "/Users/bposhtarenko/Library/CloudStorage/Dropbox/Vault", -- no need to call 'vim.fn.expand' here
+    dir = obsidian_dir, -- no need to call 'vim.fn.expand' here
     -- Optional, completion.
     completion = {
         -- If using nvim-cmp, otherwise set to false
@@ -76,37 +78,72 @@ require("obsidian").setup({
     -- is not installed, or if it the command does not support it, the
     -- remaining finders will be attempted in the original order.
     finder = "telescope.nvim",
+    mappings = {},
     note_id_func = function(title)
         return title
     end,
 })
 
--- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
--- see also: 'follow_url_func' config option above.
-vim.keymap.set("n", "gf", function()
-    if require("obsidian").util.cursor_on_markdown_link() then
-        return "<cmd>ObsidianFollowLink<CR>"
-    else
-        return "gf"
-    end
-end, { noremap = false, expr = true })
+-- -- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
+-- -- see also: 'follow_url_func' config option above.
+-- vim.keymap.set("n", "gf", function()
+--     if require("obsidian").util.cursor_on_markdown_link() then
+--         return "<cmd>ObsidianFollowLink<CR>"
+--     else
+--         return "gf"
+--     end
+-- end, { noremap = false, expr = true })
 
 local M = {}
 
-function M.init_obsidian()
+M.open_obsidian = function()
+    if vim.bo.filetype ~= "markdown" then
+        return
+    end
+
+    vim.api.nvim_command("ObsidianOpen")
+end
+
+M.open_obsidian_autocmd = function()
+    return vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "*.md",
+        command = "lua require('mira1zu.obsidian').open_obsidian()"
+    })
+end
+
+M.init_obsidian = function()
     local which_key = require("which-key")
 
     -- Setup working directory
-    vim.api.nvim_command(":cd /Users/bposhtarenko/Library/CloudStorage/Dropbox/Vault")
+    vim.api.nvim_command(":cd" .. obsidian_dir)
     vim.api.nvim_command("Lazy load obsidian.nvim")
     vim.api.nvim_command("Telescope find_files")
 
-    -- Setup autocmd for ObsidianOpen
-    vim.cmd([[autocmd BufReadPost *.md lua vim.api.nvim_command("ObsidianOpen")]])
+    local autocmdId = nil
 
     -- Setup which-key mappings
     which_key.register({
         o = {
+            a = {
+                function()
+                    if autocmdId ~= nil then
+                        vim.api.nvim_del_autocmd(autocmdId)
+
+                        autocmdId = nil
+                    else
+                        autocmdId = M.open_obsidian_autocmd()
+                    end
+                end,
+                "Toggle ObsidianOpen autocmd"
+            },
+            b = {
+                "<cmd>ObsidianBacklinks<CR>",
+                "Backlinks"
+            },
+            f = {
+                "<cmd>ObsidianFollowLink<CR>",
+                "Follow link"
+            },
             o = {
                 "<cmd>ObsidianOpen<CR>",
                 "Open note in Obsidian"
@@ -130,12 +167,6 @@ function M.init_obsidian()
             "Obsidian"
         }
     }, { prefix = "<leader>" })
-
-    vim.o.linebreak = true
-    vim.o.textwidth = 77 -- Magic value. Why? Because with that setting,
-    -- on my 2560x1080 screen, with three equally split windows, the vim
-    -- window does not move. Also, seems like Obsidian has 77 chars in line
-    -- as well.
 end
 
 return M

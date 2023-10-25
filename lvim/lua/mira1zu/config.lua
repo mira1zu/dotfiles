@@ -2,21 +2,13 @@ vim.opt.relativenumber = true
 
 vim.opt.colorcolumn = { '80' }
 
--- lvim.transparent_window = true
-
-vim.opt.titlestring = "%t (%f) - NVIM"
-
-vim.opt.fillchars.eob = " "
-
-lvim.colorscheme = "ayu"
+vim.opt.titlestring = "%t - NVIM"
 
 vim.opt.autochdir = false
 
--- lvim.format_on_save.enabled = true
-
 vim.opt.indentexpr = 'indentexpr'
 
--- vim.opt.guicursor = 'n-v-c-i:block'
+vim.opt.guicursor = 'n-v-c-i:block'
 
 vim.opt.backup = false                         -- creates a backup file
 vim.opt.clipboard = "unnamedplus"              -- allows neovim to access the system clipboard
