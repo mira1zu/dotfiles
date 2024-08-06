@@ -1,0 +1,165 @@
+{
+  // #region file extension settings
+  "[mdx]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // #endregion
+  // #region vscode settings
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorBlinking": "solid",
+  "editor.foldingImportsByDefault": true,
+  "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "onFocusChange",
+  "files.watcherExclude": {
+    "**/.angular": true,
+    "**/.gradle": true,
+    "**/.nx": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/documentation.json": true,
+    "**/hive/lib/themes": true,
+    "package-lock.json": true
+  },
+  "github.gitProtocol": "ssh",
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  "html.format.indentInnerHtml": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "inlineChat.holdToSpeech": false,
+  "javascript.format.semicolons": "insert",
+  "javascript.preferences.importModuleSpecifier": "project-relative",
+  "javascript.preferGoToSourceDefinition": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "scss.lint.boxModel": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.important": "warning",
+  "scss.lint.universalSelector": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "search.exclude": {
+    "**/.angular": true,
+    "**/.gradle": true,
+    "**/.nx": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/documentation.json": true,
+    "**/hive/lib/themes": true,
+    "package-lock.json": true
+  },
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.33,
+  "typescript.format.semicolons": "insert",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.preferGoToSourceDefinition": false,
+  "typescript.tsserver.maxTsServerMemory": 6144,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.commandCenter": false,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.nativeTabs": true,
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "workbench.editor.labelFormat": "medium",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.editor.tabSizingFixedMinWidth": 300,
+  "workbench.tree.indent": 36,
+  "window.systemColorTheme": "auto",
+  "workbench.layoutControl.enabled": false,
+  "window.customTitleBarVisibility": "never",
+  "window.titleBarStyle": "native",
+  // #endregion
+  // #region extensions settings
+  "auto-close-tag.SublimeText3Mode": true,
+  "errorLens.delayMode": "debounce",
+  "errorLens.messageTemplate": "$message $source",
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.terminalLinksHandler": "github",
+  "vim.easymotion": true,
+  "vim.easymotionDimBackground": false,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "c"],
+      "commands": ["angular.goToComponentWithTemplateFile"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["git.openChange"]
+    },
+    {
+      "before": ["<leader>", "g", "l"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["<leader>", "g", "m"],
+      "commands": ["git.openFile"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"]
+    }
+  ],
+  "vim.showMarksInGutter": false,
+  "vim.useSystemClipboard": true,
+  "path-intellisense.autoTriggerNextSuggestion": true,
+  "prettier.configPath": "prettier.config.js",
+  "redhat.telemetry.enabled": false,
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*{1,2}|^\\s*\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "apc.electron": {
+    "frame": false
+  },
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "html.format.wrapLineLength": 80,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "update.mode": "manual",
+  "diffEditor.hideUnchangedRegions.enabled": true
+  // #endregion
+}

@@ -1,52 +1,38 @@
 #!/usr/bin/env sh
 
 # Unload the macOS WindowManager process
-# launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
+launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
 
 yabai -m config layout                     bsp          \
-                window_border              on           \
                 mouse_follows_focus        on           \
-                focus_follows_mouse        off          \
-                window_zoom_persist        off          \
                 window_placement           second_child \
-                window_topmost             off          \
-                window_shadow              float        \
-                window_opacity             off          \
-                window_opacity_duration    0.0          \
-                active_window_opacity      1.0          \
-                normal_window_opacity      0.0          \
-                window_border_width        2            \
-                window_border_hidpi        on           \
-                window_border_radius       11           \
-                window_border_blur         off          \
-                window_animation_duration  0.3          \
-                active_window_border_color 0xffe1e3e4   \
-                normal_window_border_color 0xff494d64   \
-                insert_feedback_color      0xff9dd274   \
-                split_ratio                0.50         \
-                auto_balance               off          \
                 mouse_modifier             fn           \
                 mouse_action1              move         \
                 mouse_action2              resize       \
                 mouse_drop_action          swap         \
                 mouse_modifier             cmd          \
+                auto_balance               off          \
+                auto_padding               on           \
+                auto_padding_min_aspect    2.33         \
+                auto_padding_width         2020          \
+                auto_padding_height        1136         \
                                                         \
                 top_padding                8            \
                 bottom_padding             8            \
                 left_padding               8            \
                 right_padding              8            \
-                window_gap                 8
+                window_gap                 10
 
-# disable specific apps
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^LinearMouse$" manage=off
-yabai -m rule --add app="^Digital Color Meter$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" manage=off
 
-yabai -m rule --add app="^Telegram$" border=off
+# Exclude problematic apps from being managed:
+yabai -m rule --add app="^(LinearMouse|Digital Color Meter|Calculator|Software Update|Dictionary|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|App Store|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="Okta" app="^Okta Verify$" manage=off
+# Tip: excluding only one tab's title excluded all tabs. At least for Calendar.
+yabai -m rule --add label="Calendar" app="^Calendar$" title="^General$" manage=off
+yabai -m rule --add label="Notes" app="^Notes$" title="^Settings$" manage=off
+yabai -m rule --add label="IntelliJ IDEA" app="^IntelliJ IDEA$" title="^(Settings|Delete|Rename|Conflicts|Push Commits to .*|Edit Commit Message|Create New Branch|Rebase|Shelve Changes|Update Project)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 
-# yabai -m signal --add event=window_created app="^Terminal$|^Finder$|^IntelliJ IDEA$" \
-#     action="yabai -m space --layout float && yabai -m space --layout bsp"
+borders 

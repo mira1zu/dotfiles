@@ -1,5 +1,8 @@
 # Windows
 
+# Toggle window float
+shift + cmd - 0x32 : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
 # Change window focus within space
 cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
@@ -13,29 +16,24 @@ shift + cmd - j : yabai -m window --swap south
 shift + cmd - h : yabai -m window --swap west
 
 # Move window and split
-ctrl + cmd - k : yabai -m window --warp north
-ctrl + cmd - l : yabai -m window --warp east
-ctrl + cmd - j : yabai -m window --warp south
-ctrl + cmd - h : yabai -m window --warp west
-
-# Toggle window float
-shift + cmd - 0x32 : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
-# Resize window to 16:9
-# shift + cmd - y : ~/.config/skhd/resize_window2.sh
+alt + cmd - k : yabai -m window --warp north
+alt + cmd - l : yabai -m window --warp east
+alt + cmd - j : yabai -m window --warp south
+alt + cmd - h : yabai -m window --warp west
 
 # Displays
+
 # Change focus between external displays
-ctrl + cmd - d : yabai -m display --focus north 
-ctrl + cmd - g : yabai -m display --focus east
-ctrl + cmd - f : yabai -m display --focus south
-ctrl + cmd - s : yabai -m display --focus west
+ctrl + cmd - k : yabai -m display --focus north 
+ctrl + cmd - l : yabai -m display --focus east
+ctrl + cmd - j : yabai -m display --focus south
+ctrl + cmd - h : yabai -m display --focus west
 
 # Move window to display
-# shift + cmd - d : yabai -m window --display north; yabai -m display --focus north;
-shift + cmd - g : yabai -m window --display east; yabai -m display --focus east;
-# shift + cmd - f : yabai -m window --display south; yabai -m display --focus south;
-shift + cmd - s : yabai -m window --display west; yabai -m display --focus west;
+ctrl + shift + cmd - k : yabai -m window --display north; yabai -m display --focus north;
+ctrl + shift + cmd - l : yabai -m window --display east; yabai -m display --focus east;
+ctrl + shift + cmd - j : yabai -m window --display south; yabai -m display --focus south;
+ctrl + shift + cmd - h : yabai -m window --display west; yabai -m display --focus west;
 
 # Spaces
 
@@ -65,10 +63,10 @@ ctrl + cmd - 9 : yabai -m window --space 9;
 # ctrl + shift - 8 : yabai -m space --focus 8;
 
 # Flip along y-axis
-ctrl + cmd - y : yabai -m space --mirror y-axis
+# ctrl + cmd - y : yabai -m space --mirror y-axis
 
 # Flip along x-axis # Conflicts
-ctrl + cmd - x : yabai -m space --mirror x-axis
+# ctrl + cmd - x : yabai -m space --mirror x-axis
 
 # Balance out tree of windows (resize to occupy same area)
 shift + cmd - 0x18 : yabai -m space --balance

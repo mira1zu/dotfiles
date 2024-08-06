@@ -34,3 +34,5 @@
 - [ ] <leader>F and :w format differently
 - [ ] autosave does not get fired when I change smth with `dd`, for example
 - [ ] bufferline, tweak with jump command. https://github.com/akinsho/bufferline.nvim/issues/652. BufferLinePick
+- [ ] inconsistet accent
+- [ ] if cmp matches completely, <CR> should return caret, not 'accept' suggestion
