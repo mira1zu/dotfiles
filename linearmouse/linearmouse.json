@@ -1,0 +1,19 @@
+{
+  "schemes" : [
+    {
+      "pointer" : {
+        "speed" : 0.1
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0xc084",
+          "serialNumber" : "067238673135",
+          "productName" : "G102 Prodigy Gaming Mouse",
+          "vendorID" : "0x46d",
+          "category" : "mouse"
+        }
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1"
+}
