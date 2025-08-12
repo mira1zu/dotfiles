@@ -1,0 +1,42 @@
+#!/usr/bin/env sh
+
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+
+# Unload the macOS WindowManager process
+launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
+
+yabai -m config layout                     bsp          \
+                mouse_follows_focus        on           \
+                window_placement           second_child \
+                mouse_modifier             fn           \
+                mouse_action1              move         \
+                mouse_action2              resize       \
+                mouse_drop_action          swap         \
+                mouse_modifier             cmd          \
+                top_padding                8            \
+                bottom_padding             8            \
+                left_padding               8            \
+                right_padding              8            \
+                window_gap                 10 		\
+
+# SIP
+# yabai -m config window_shadow float
+# yabai -m config window_opacity on
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.1
+
+
+# Exclude problematic apps from being managed:
+yabai -m rule --add app="^(LinearMouse|Digital Color Meter|Calculator|Software Update|Dictionary|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|App Store|Activity Monitor)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="Okta" app="^Okta Verify$" manage=off
+# Tip: excluding only one tab's title excluded all tabs. At least for Calendar.
+yabai -m rule --add label="Calendar" app="^Calendar$" title="^General$" manage=off
+yabai -m rule --add label="Notes" app="^Notes$" title="^Settings$" manage=off
+yabai -m rule --add label="IntelliJ IDEA" app="^IntelliJ IDEA$" title="^(Settings|Delete|Rename|Conflicts|Push Commits to .*|Edit Commit Message|Create New Branch|Rebase|Shelve Changes|Update Project)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off

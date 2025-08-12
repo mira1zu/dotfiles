@@ -1,0 +1,13 @@
+{
+    "javascript.format.semicolons": "insert",
+    "javascript.preferences.importModuleSpecifier": "relative",
+    "javascript.preferences.importModuleSpecifierEnding": "minimal",
+    "javascript.preferGoToSourceDefinition": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+
+    "typescript.format.semicolons": "insert",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "typescript.preferGoToSourceDefinition": true,
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}

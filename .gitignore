@@ -1,0 +1,6 @@
+# unique to system
+.gitconfig 
+.ssh
+
+# work related
+.zshrc_work
