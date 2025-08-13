@@ -1,0 +1,7 @@
+source ~/.vimrc
+
+
+map gl <Action>(GotoTypeDeclaration)
+map gi <Action>(GotoImplementation)
+
+map <c-z> <Action>(ToggleDistractionFreeMode)
