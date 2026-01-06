@@ -1,2 +1,2 @@
 set relativenumber
-set clipboard=unnamedplus
+set ignorecase
