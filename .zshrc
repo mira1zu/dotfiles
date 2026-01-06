@@ -1,6 +1,10 @@
 # sources
 source $HOME/.zshrc_work
 
+if [ -f $HOME/.zshrc_personal ]; then
+	source $HOME/.zshrc_personal
+fi
+
 # --- aliases ---
 
 alias ls='ls --color'
@@ -11,14 +15,21 @@ alias gcm='git commit'
 alias gsw='git switch'
 alias gad='git add'
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' # https://www.atlassian.com/git/tutorials/dotfiles
+# https://www.atlassian.com/git/tutorials/dotfiles
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME' 
 
 # --- exports --- 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
 # --- functions ---
 jwt-decode() {
   jq -R 'split(".") |.[0:2] | map(@base64d) | map(fromjson)' <<< $1
 }
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+eval "$(starship init zsh)" 

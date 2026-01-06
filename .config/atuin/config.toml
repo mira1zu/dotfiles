@@ -14,12 +14,17 @@
 # session_path = "~/.session"
 
 ## date format used, either "us" or "uk"
+<<<<<<< HEAD
 # dialect = "us"
+=======
+dialect = "us"
+>>>>>>> b98aea0 (Update)
 
 ## default timezone to use when displaying time
 ## either "l", "local" to use the system's current local timezone, or an offset
 ## from UTC in the format of "<+|->H[H][:M[M][:S[S]]]"
 ## for example: "+9", "-05", "+03:30", "-01:23:45", etc.
+<<<<<<< HEAD
 # timezone = "local"
 
 ## enable or disable automatic sync
@@ -27,6 +32,15 @@
 
 ## enable or disable automatic update checks
 # update_check = true
+=======
+timezone = "local"
+
+## enable or disable automatic sync
+auto_sync = false
+
+## enable or disable automatic update checks
+update_check = true
+>>>>>>> b98aea0 (Update)
 
 ## address of the sync server
 # sync_address = "https://api.atuin.sh"
@@ -56,7 +70,11 @@
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
 ## leave unspecified to use same mode set in "filter_mode"
+<<<<<<< HEAD
 # filter_mode_shell_up_key_binding = "global"
+=======
+filter_mode_shell_up_key_binding = "session"
+>>>>>>> b98aea0 (Update)
 
 ## which search mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "search_mode"
@@ -69,19 +87,31 @@
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
+<<<<<<< HEAD
 # inline_height = 0
+=======
+inline_height = 0
+>>>>>>> b98aea0 (Update)
 
 ## the maximum number of lines the interface should take up
 ## when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "inline_height"
+<<<<<<< HEAD
 # inline_height_shell_up_key_binding = 0
+=======
+inline_height_shell_up_key_binding = 0
+>>>>>>> b98aea0 (Update)
 
 ## Invert the UI - put the search bar at the top , Default to `false`
 # invert = false
 
 ## enable or disable showing a preview of the selected command
 ## useful when the command is longer than the terminal width and is cut off
+<<<<<<< HEAD
 # show_preview = true
+=======
+show_preview = true
+>>>>>>> b98aea0 (Update)
 
 ## what to do when the escape key is pressed when searching
 ## possible values: return-original, return-query
@@ -134,7 +164,11 @@
 ## Configure whether or not to show the help row, which includes the current Atuin
 ## version (and whether an update is available), a keymap hint, and the total
 ## amount of commands in your history.
+<<<<<<< HEAD
 # show_help = true
+=======
+show_help = true
+>>>>>>> b98aea0 (Update)
 
 ## Configure whether or not to show tabs for search and inspect
 # show_tabs = true

@@ -1,0 +1,45 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb042",
+          "productName" : "MX Master 4",
+          "serialNumber" : "E68492DD",
+          "vendorID" : "0x46d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : "unset",
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : "unset"
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 3,
+        "reverse" : {
+          "vertical" : false
+        },
+        "speed" : 0
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb042",
+          "productName" : "MX Master 4",
+          "serialNumber" : "E68492DD",
+          "vendorID" : "0x46d"
+        },
+        "parentApp" : "org.prismlauncher.PrismLauncher"
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      }
+    }
+  ]
+}
