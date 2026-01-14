@@ -1,4 +1,8 @@
-# sources
+# --- settings ---
+setopt autocd
+autoload -U compinit; compinit
+
+# --- sources ---
 if [ -f $HOME/.zshrc_work ]; then
 	source $HOME/.zshrc_work
 fi
