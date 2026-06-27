@@ -1,0 +1,19 @@
+# Packages (reinstall from package-selected-packages)
+elpa/
+eln-cache/
+
+# Auto-generated
+auto-save-list/
+*.elc
+*~
+\#*\#
+.\#*
+
+# Machine-specific state
+recentf
+places
+tramp
+ido.last
+url/
+
+tutorial/
