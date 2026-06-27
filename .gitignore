@@ -4,3 +4,6 @@
 
 # work related
 .zshrc_work
+
+# macOS
+.DS_Store
