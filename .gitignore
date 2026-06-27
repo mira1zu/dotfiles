@@ -5,5 +5,8 @@
 # work related
 .zshrc_work
 
+# personal related
+.zshrc_personal
+
 # macOS
 .DS_Store
