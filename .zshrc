@@ -29,6 +29,8 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Note: for this to work on MacOS, `coreutils` are required to get GNU version of `head` which does not complain about `-c -1`
 alias copy='ghead -c -1 | pbcopy'
 
+alias e='emacs -nw'
+
 # --- exports --- 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -44,3 +46,8 @@ jwt-decode() {
 eval "$(atuin init zsh)"
 
 eval "$(starship init zsh)" 
+
+# docker autocompletion
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
