@@ -18,7 +18,7 @@ RTK passthrough handles `cfg` the same as `git`.
 
 | Tool | Config |
 |------|--------|
-| Editor: LunarVim (`lvim`) | `~/.config/lvim/` |
+| Editor: Emacs | `~/.emacs.d/init.el` |
 | Window manager: yabai + skhd | `~/.config/yabai/yabairc`, `~/.config/skhd/skhdrc` |
 | Shell history: atuin | `~/.config/atuin/config.toml` |
 | Prompt: starship | `~/.config/starship.toml` |
