@@ -30,6 +30,7 @@ alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias copy='ghead -c -1 | pbcopy'
 
 alias e='emacs -nw'
+alias less='less -i'
 
 # --- exports --- 
 export NVM_DIR="$HOME/.nvm"
@@ -51,3 +52,12 @@ eval "$(starship init zsh)"
 FPATH="$HOME/.docker/completions:$FPATH"
 autoload -Uz compinit
 compinit
+
+# setopt
+
+setopt EXTENDED_HISTORY
+setopt HIST_APPEND
+setopt INC_APPEND_HISTORY
+
+HISTSIZE=10000000
+SAVEHIST=10000000
