@@ -45,6 +45,10 @@
   :ensure t
   :bind ("M-o" . ace-window))
 
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
 (global-set-key (kbd "s-<return>") #'toggle-frame-maximized)
 
 (set-face-attribute 'default nil
@@ -56,3 +60,7 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 
 (which-key-mode)
+
+;; Machine-local config (mail accounts etc.) — untracked, see .gitignore
+(load (expand-file-name "init-work.el" user-emacs-directory) 'noerror)
+(load (expand-file-name "init-personal.el" user-emacs-directory) 'noerror)

@@ -17,3 +17,7 @@ ido.last
 url/
 
 tutorial/
+
+# Machine-local mail / account config (mirrors .zshrc_work / .zshrc_personal)
+init-work.el
+init-personal.el
