@@ -19,7 +19,15 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'gruvbox-dark-medium' t)
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(use-package gruvbox-theme
+  :ensure t
+  :config (load-theme 'gruvbox-dark-medium t))
 
 (setq select-enable-clipboard t)
 (setq select-enable-primary t)
