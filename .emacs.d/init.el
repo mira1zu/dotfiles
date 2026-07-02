@@ -40,6 +40,8 @@
 (global-display-line-numbers-mode t)
 (column-number-mode t)
 (global-hl-line-mode t)
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 
 ;; Sane defaults
 (setq-default indent-tabs-mode nil)    ; spaces, not tabs
@@ -58,17 +60,23 @@
   :bind ("C-x g" . magit-status))
 
 (global-set-key (kbd "s-<return>") #'toggle-frame-maximized)
+(global-set-key (kbd "C-c i") (lambda () (interactive) (find-file user-init-file)))
 
 (set-face-attribute 'default nil
 		    :font "SF Mono-14"
 		    :weight 'semi-bold)
 		    
+(setq org-log-done 'time)
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+(global-set-key (kbd "C-c o")
+  (lambda () (interactive) (dired org-directory)))
 
 (which-key-mode)
 
 ;; Machine-local config (mail accounts etc.) — untracked, see .gitignore
 (load (expand-file-name "init-work.el" user-emacs-directory) 'noerror)
 (load (expand-file-name "init-personal.el" user-emacs-directory) 'noerror)
+
+(add-to-list 'default-frame-alist '(internal-border-width . 0))
