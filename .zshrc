@@ -31,6 +31,7 @@ alias copy='ghead -c -1 | pbcopy'
 
 alias e='emacs -nw'
 alias less='less -i'
+alias k='kubectl'
 
 # --- exports --- 
 export NVM_DIR="$HOME/.nvm"
