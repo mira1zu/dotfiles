@@ -11,7 +11,9 @@
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
      default))
  '(fringe-mode 0 nil (fringe))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(ace-window gruvbox-theme magit markdown-mode persistent-scratch
+                visual-fill-column yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -59,12 +61,27 @@
   :ensure t
   :bind ("C-x g" . magit-status))
 
+(use-package visual-fill-column
+  :ensure t)
+
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :custom
+  (markdown-hide-markup t)
+  :hook (markdown-mode . (lambda ()
+                           (setq visual-fill-column-center-text t))))
+
+(use-package yaml-mode
+  :ensure t
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+
 (global-set-key (kbd "s-<return>") #'toggle-frame-maximized)
 (global-set-key (kbd "C-c i") (lambda () (interactive) (find-file user-init-file)))
 
 (set-face-attribute 'default nil
 		    :font "SF Mono-14"
-		    :weight 'semi-bold)
+		    :weight 'medium)
 		    
 (setq org-log-done 'time)
 (global-set-key (kbd "C-c l") #'org-store-link)
@@ -74,6 +91,10 @@
   (lambda () (interactive) (dired org-directory)))
 
 (which-key-mode)
+
+(use-package persistent-scratch
+  :ensure t
+  :config (persistent-scratch-setup-default))
 
 ;; Machine-local config (mail accounts etc.) — untracked, see .gitignore
 (load (expand-file-name "init-work.el" user-emacs-directory) 'noerror)
