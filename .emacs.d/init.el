@@ -2,6 +2,8 @@
 
 ;;; Bootstrap
 (setq native-comp-async-report-warnings-errors 'silent)
+(add-to-list 'exec-path "/opt/homebrew/bin")
+(setenv "PATH" (concat "/opt/homebrew/bin:" (getenv "PATH")))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
